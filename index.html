@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沖縄ゆるり旅2026</title>
+  <style>
+    :root {
+      --bg: #e7f4ef;
+      --primary: #2f7c5d;
+      --accent: #6bb48d;
+      --deep: #1d5a42;
+      --card: #ffffff;
+      --text: #143126;
+      --muted: #4c6a5b;
+      --pill: rgba(47, 124, 93, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+      background: linear-gradient(180deg, #eef7f1 0%, #e2f0e8 45%, #d5e9df 100%),
+                  radial-gradient(circle at 22% 15%, rgba(107, 180, 141, 0.22), transparent 38%),
+                  radial-gradient(circle at 80% 10%, rgba(47, 124, 93, 0.2), transparent 32%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    header {
+      text-align: center;
+      padding: clamp(92px, 14vw, 128px) 20px clamp(76px, 11vw, 116px);
+      background-image: url('fbaku629P9093788-9628.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: var(--deep);
+      color: #f6fbff;
+      position: relative;
+      overflow: hidden;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      box-shadow: 0 12px 26px rgba(20, 49, 38, 0.18);
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      min-height: 78vh;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(12, 30, 22, 0.6), rgba(47, 124, 93, 0.6));
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.28), transparent 42%),
+                  radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2), transparent 46%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      margin: 0 0 12px;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .subtitle {
+      font-size: 1.06rem;
+      margin: 0 auto;
+      max-width: 720px;
+      color: #ecf7f1;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .tagline {
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #f1f8f4;
+      margin: 0 0 10px;
+      text-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    main {
+      max-width: 1040px;
+      margin: -18px auto 64px;
+      padding: 0 20px;
+    }
+
+    .countdown-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.08), rgba(107, 180, 141, 0.12));
+      border: 1px solid rgba(47, 124, 93, 0.16);
+      padding: 28px 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(20, 49, 38, 0.08);
+    }
+
+    .countdown-number {
+      font-size: clamp(3rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: var(--deep);
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .days-label {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 600;
+      background: var(--pill);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 124, 93, 0.18);
+    }
+
+    .countdown-note {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .countdown-label {
+      font-size: 0.98rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 14px 30px rgba(20, 49, 38, 0.08);
+      border: 1px solid rgba(47, 124, 93, 0.12);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--deep);
+      font-size: 1.48rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      box-shadow: 0 0 0 7px rgba(107, 180, 141, 0.18);
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.06), rgba(107, 180, 141, 0.12));
+      border-radius: 14px;
+      border: 1px solid rgba(47, 124, 93, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
+    }
+
+    .card strong {
+      color: var(--deep);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .day-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--pill);
+      color: var(--deep);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(47, 124, 93, 0.18);
+      margin-bottom: 10px;
+      box-shadow: 0 6px 16px rgba(20, 49, 38, 0.06);
+    }
+
+    .divider {
+      margin: 12px 0 16px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(47, 124, 93, 0.28), transparent);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .note {
+      display: inline-block;
+      padding: 7px 12px;
+      background: rgba(47, 124, 93, 0.08);
+      color: var(--deep);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px dashed rgba(47, 124, 93, 0.24);
+      letter-spacing: 0.02em;
+    }
+
+    .list-accent li::marker {
+      content: "● ";
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 64px 16px 52px;
+        min-height: 62vh;
+      }
+
+      section {
+        padding: 22px 18px;
+      }
+
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- タイトルセクション：旅のタイトルと概要 -->
+  <header>
+    <div class="header-content">
+      <h1>沖縄ゆるり旅2026</h1>
+      <p class="tagline">家族で楽しむ、冬の沖縄ゆるり旅</p>
+      <p class="subtitle">冬のやわらかな陽ざしの中で、家族みんなでゆったりと過ごす5日間の沖縄旅のメモ。</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- カウントダウンセクション：出発までの日数表示 -->
+    <section class="countdown-card">
+      <p class="countdown-label">家族旅行が待ちきれないね</p>
+      <h2>出発まであと</h2>
+      <div class="countdown-number">
+        <span id="countdown-days">--</span>
+        <span class="days-label">日</span>
+      </div>
+      <p class="countdown-note" id="countdown-note">出発日に向けてわくわく準備中。</p>
+    </section>
+
+    <!-- 日程セクション：旅行期間の概要 -->
+    <section>
+      <h2>日程</h2>
+      <p>2026年1月9日（金）〜1月13日（火）の5日間。寒い関西を離れ、穏やかな冬の沖縄でのんびり過ごします。</p>
+      <span class="note">家族4人 / レンタカー利用</span>
+    </section>
+
+    <!-- 日ごとのスケジュール：各日の予定概要 -->
+    <section>
+      <h2>日ごとのスケジュール</h2>
+      <div class="schedule-grid">
+        <div class="card">
+          <span class="day-pill">1日目</span>
+          <strong>1/9（金）</strong>
+          <p>関空から那覇へ移動し、本部町の宿にチェックイン。</p>
+        </div>
+        <div class="card">
+          <span class="day-pill">2日目</span>
+          <strong>1/10（土）</strong>
+          <p>美ら海水族館でじっくり海の世界を楽しむ日。</p>
+        </div>
+        <div class="card">
+          <span class="day-pill">3日目</span>
+          <strong>1/11（日）</strong>
+          <p>沖縄北部をドライブ観光。夜は宿でバーベキューを予定。</p>
+        </div>
+        <div class="card">
+          <span class="day-pill">4日目</span>
+          <strong>1/12（月）</strong>
+          <p>那覇の宿に移動し、国際通りなどでショッピング。</p>
+        </div>
+        <div class="card">
+          <span class="day-pill">5日目</span>
+          <strong>1/13（火）</strong>
+          <p>那覇から関空へ移動して帰宅。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行きたい場所リスト：訪問予定スポット -->
+    <section>
+      <h2>行きたい場所リスト</h2>
+      <div class="divider"></div>
+      <ul class="list-accent">
+        <li>美ら海水族館</li>
+        <li>名護パイナップルパーク</li>
+        <li>その他は考え中</li>
+      </ul>
+    </section>
+
+    <!-- やりたいことリスト：これから検討する内容 -->
+    <section>
+      <h2>やりたいことリスト</h2>
+      <div class="divider"></div>
+      <p>これから家族で考える予定です。海辺の散歩や冬の星空観察など、アイデアを持ち寄って決めたいと思います。</p>
+    </section>
+  </main>
+  <script>
+    // Countdown to the departure date (local time)
+    const countdownDaysEl = document.getElementById('countdown-days');
+    const countdownNoteEl = document.getElementById('countdown-note');
+
+    const departureDate = new Date('2026-01-09T00:00:00');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const diffMs = departureDate.getTime() - today.getTime();
+    const remainingDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    if (remainingDays > 0) {
+      countdownDaysEl.textContent = remainingDays;
+      countdownNoteEl.textContent = '出発の準備を進めよう！';
+    } else if (remainingDays === 0) {
+      countdownDaysEl.textContent = '0';
+      countdownNoteEl.textContent = 'ついに出発の日！行ってらっしゃい！';
+    } else {
+      countdownDaysEl.textContent = '0';
+      countdownNoteEl.textContent = '旅行は終了しました。また次の旅を計画しよう。';
+    }
+  </script>
+</body>
+</html>
