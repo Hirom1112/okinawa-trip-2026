@@ -34,7 +34,7 @@
     header {
       text-align: center;
       padding: clamp(92px, 14vw, 128px) 20px clamp(76px, 11vw, 116px);
-      background-image: url('fbaku629P9093788-9628.jpg');
+      background-image: url('images/fbaku629P9093788-9628.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -166,6 +166,33 @@
       margin-bottom: 24px;
       box-shadow: 0 14px 30px rgba(20, 49, 38, 0.08);
       border: 1px solid rgba(47, 124, 93, 0.12);
+    }
+
+    .participants-photo {
+      width: 100%;
+      border-radius: 14px;
+      margin: 12px 0 18px;
+      border: 1px solid rgba(47, 124, 93, 0.16);
+      box-shadow: 0 12px 24px rgba(20, 49, 38, 0.12);
+      display: block;
+    }
+
+    .participants-names {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .participant-pill {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--pill);
+      color: var(--deep);
+      font-weight: 700;
+      border: 1px solid rgba(47, 124, 93, 0.18);
+      box-shadow: 0 8px 18px rgba(20, 49, 38, 0.06);
+      letter-spacing: 0.04em;
     }
 
     h2 {
@@ -315,6 +342,17 @@
       <h2>日程</h2>
       <p>2026年1月9日（金）〜1月13日（火）の5日間。寒い関西を離れ、穏やかな冬の沖縄でのんびり過ごします。</p>
       <span class="note">家族4人 / レンタカー利用</span>
+    </section>
+
+    <!-- 参加者セクション：家族の紹介 -->
+    <section>
+      <h2>参加者</h2>
+      <img src="images/IMG_0585.JPG" alt="家族写真" class="participants-photo">
+      <div class="participants-names">
+        <span class="participant-pill">洋喜</span>
+        <span class="participant-pill">彩圭</span>
+        <span class="participant-pill">想生</span>
+      </div>
     </section>
 
     <!-- 日ごとのスケジュール：各日の予定概要 -->
