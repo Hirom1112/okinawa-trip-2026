@@ -34,7 +34,7 @@
     header {
       text-align: center;
       padding: clamp(92px, 14vw, 128px) 20px clamp(76px, 11vw, 116px);
-      background-image: url('images/fbaku629P9093788-9628.jpg');
+      background-image: url('fbaku629P9093788-9628.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -273,6 +273,59 @@
       background: linear-gradient(90deg, transparent, rgba(47, 124, 93, 0.28), transparent);
     }
 
+    .wish-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .wish-block {
+      padding: 14px 16px 6px;
+      border: 1px solid rgba(47, 124, 93, 0.12);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.04), rgba(107, 180, 141, 0.08));
+      box-shadow: 0 10px 22px rgba(20, 49, 38, 0.05);
+    }
+
+    .subheading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: var(--deep);
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    .subheading .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(47, 124, 93, 0.15);
+      color: var(--deep);
+      border: 1px solid rgba(47, 124, 93, 0.2);
+      font-size: 0.9rem;
+      box-shadow: 0 6px 14px rgba(20, 49, 38, 0.08);
+    }
+
+    .wish-block ul {
+      margin-top: 6px;
+    }
+
+    .wish-link {
+      color: var(--deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(47, 124, 93, 0.25);
+      padding-bottom: 2px;
+    }
+
+    .wish-link:hover,
+    .wish-link:focus {
+      color: #0f2f24;
+      border-bottom-color: rgba(47, 124, 93, 0.55);
+    }
+
     ul {
       padding-left: 18px;
       margin: 0;
@@ -310,6 +363,10 @@
       }
 
       .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wish-lists {
         grid-template-columns: 1fr;
       }
     }
@@ -389,13 +446,35 @@
 
     <!-- 行きたい場所リスト：訪問予定スポット -->
     <section>
-      <h2>行きたい場所リスト</h2>
+      <h2>行きたいところ・やりたいことリスト</h2>
       <div class="divider"></div>
-      <ul class="list-accent">
-        <li>美ら海水族館</li>
-        <li>名護パイナップルパーク</li>
-        <li>その他は考え中</li>
-      </ul>
+      <div class="wish-lists">
+        <div class="wish-block">
+          <div class="subheading">
+            <span class="badge">Must</span>
+            <span>行きたいところ・やりたいことリスト_Must（絶対）</span>
+          </div>
+          <ul class="list-accent">
+            <li>美ら海水族館</li>
+            <li>名護パイナップルパーク</li>
+            <li>本部町営市場</li>
+          </ul>
+        </div>
+        <div class="wish-block">
+          <div class="subheading">
+            <span class="badge">Better</span>
+            <span>行きたいところ・やりたいことリスト_Better（できれば）</span>
+          </div>
+          <ul class="list-accent">
+            <li><a class="wish-link" href="https://www.shikuwasa-park.com/" target="_blank" rel="noopener noreferrer">シークワーサーパーク</a></li>
+            <li><a class="wish-link" href="https://www.orionbeer.co.jp/happypark/" target="_blank" rel="noopener noreferrer">オリオンハッピーパーク（事前予約必要）</a></li>
+            <li><a class="wish-link" href="https://hedomisaki-okinawa.com/" target="_blank" rel="noopener noreferrer">辺戸岬</a></li>
+            <li><a class="wish-link" href="https://www.okinawastory.jp/spot/1271" target="_blank" rel="noopener noreferrer">慶佐次湾のヒルギ林</a></li>
+            <li><a class="wish-link" href="https://kuinapark.com/kuina" target="_blank" rel="noopener noreferrer">ヤンバルクイナ生態展示学習施設</a></li>
+            <li>どこかの森カフェ（探し中）</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- やりたいことリスト：これから検討する内容 -->
