@@ -275,7 +275,7 @@
 
     .wish-lists {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
 
@@ -474,14 +474,17 @@
             <li>どこかの森カフェ（探し中）</li>
           </ul>
         </div>
+        <div class="wish-block">
+          <div class="subheading">
+            <span class="badge">Want</span>
+            <span>行きたいところ・やりたいことリスト_Want（あったら嬉しい）</span>
+          </div>
+          <ul class="list-accent">
+            <li><a class="wish-link" href="https://www.okinawastory.jp/spot/1348" target="_blank" rel="noopener noreferrer">備瀬のフクギ並木</a></li>
+            <li><a class="wish-link" href="https://www.nakijinjoseki-osi.jp/" target="_blank" rel="noopener noreferrer">今帰仁城跡</a></li>
+          </ul>
+        </div>
       </div>
-    </section>
-
-    <!-- やりたいことリスト：これから検討する内容 -->
-    <section>
-      <h2>やりたいことリスト</h2>
-      <div class="divider"></div>
-      <p>これから家族で考える予定です。海辺の散歩や冬の星空観察など、アイデアを持ち寄って決めたいと思います。</p>
     </section>
   </main>
   <script>
