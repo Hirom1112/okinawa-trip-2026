@@ -6,13 +6,18 @@
   <title>沖縄ゆるり旅2026</title>
   <style>
     :root {
-      --bg: #e7f4ef;
+      --bg-gradient: radial-gradient(circle at 12% 18%, rgba(164, 216, 191, 0.45), transparent 26%),
+                     radial-gradient(circle at 82% 10%, rgba(122, 190, 206, 0.45), transparent 24%),
+                     linear-gradient(180deg, #f6fbf7 0%, #e9f4ef 48%, #e2eff4 100%);
+      --card-bg: #ffffff;
+      --accent-green: #2f7c5d;
+      --accent-green-soft: #8cc6a8;
+      --accent-yellow: #edf4c9;
       --primary: #2f7c5d;
       --accent: #6bb48d;
-      --deep: #1d5a42;
-      --card: #ffffff;
-      --text: #143126;
-      --muted: #4c6a5b;
+      --deep: #1f372c;
+      --text: #1f2f2a;
+      --muted: #4d675c;
       --pill: rgba(47, 124, 93, 0.1);
     }
 
@@ -22,13 +27,10 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-      background: linear-gradient(180deg, #eef7f1 0%, #e2f0e8 45%, #d5e9df 100%),
-                  radial-gradient(circle at 22% 15%, rgba(107, 180, 141, 0.22), transparent 38%),
-                  radial-gradient(circle at 80% 10%, rgba(47, 124, 93, 0.2), transparent 32%),
-                  var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-gradient);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     header {
@@ -79,7 +81,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     h1 {
@@ -109,9 +111,17 @@
     }
 
     main {
+      margin: -26px auto 80px;
+      padding: 0 18px;
+    }
+
+    .page-wrapper {
       max-width: 1040px;
-      margin: -18px auto 64px;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 28px 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
     .countdown-card {
@@ -120,11 +130,8 @@
       align-items: center;
       gap: 12px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(47, 124, 93, 0.08), rgba(107, 180, 141, 0.12));
-      border: 1px solid rgba(47, 124, 93, 0.16);
-      padding: 28px 22px;
-      border-radius: 18px;
-      box-shadow: 0 12px 28px rgba(20, 49, 38, 0.08);
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.07), rgba(107, 180, 141, 0.1));
+      border: 1px solid rgba(47, 124, 93, 0.12);
     }
 
     .countdown-number {
@@ -160,12 +167,77 @@
     }
 
     section {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 26px;
-      margin-bottom: 24px;
-      box-shadow: 0 14px 30px rgba(20, 49, 38, 0.08);
+      margin: 0;
+    }
+
+    .card {
+      padding: 20px 20px 24px;
+      background: var(--card-bg);
+      border-radius: 16px;
       border: 1px solid rgba(47, 124, 93, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 50%);
+    }
+
+    .card strong {
+      color: var(--deep);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .card-title {
+      margin: 0 0 14px;
+      color: var(--deep);
+      font-size: 1.56rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      position: relative;
+    }
+
+    .card-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 64px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-green), rgba(47, 124, 93, 0.1));
+    }
+
+    .card-title::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      box-shadow: 0 0 0 7px rgba(107, 180, 141, 0.18);
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .section-lead {
+      margin-bottom: 6px;
+      color: var(--text);
     }
 
     .participants-photo {
@@ -173,7 +245,7 @@
       border-radius: 14px;
       margin: 12px 0 18px;
       border: 1px solid rgba(47, 124, 93, 0.16);
-      box-shadow: 0 12px 24px rgba(20, 49, 38, 0.12);
+      box-shadow: 0 14px 26px rgba(20, 49, 38, 0.12);
       display: block;
     }
 
@@ -195,30 +267,16 @@
       letter-spacing: 0.04em;
     }
 
-    h2 {
-      margin-top: 0;
-      color: var(--deep);
-      font-size: 1.48rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      letter-spacing: 0.04em;
-      font-weight: 800;
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.15s ease;
     }
 
-    h2::before {
-      content: "";
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      box-shadow: 0 0 0 7px rgba(107, 180, 141, 0.18);
-    }
-
-    p {
-      margin: 0 0 12px;
-      color: var(--muted);
+    a:hover,
+    a:focus {
+      color: #0f2f24;
+      transform: translateY(-1px);
     }
 
     .schedule-grid {
@@ -227,36 +285,10 @@
       gap: 16px;
     }
 
-    .card {
-      padding: 18px;
-      background: var(--card);
-      border-radius: 14px;
-      border: 1px solid rgba(47, 124, 93, 0.16);
-      box-shadow: 0 12px 26px rgba(20, 49, 38, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 50%);
-    }
-
-    .card strong {
-      color: var(--deep);
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 800;
-      font-size: 1.05rem;
-    }
-
     .day-card {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       border-top: 4px solid var(--accent);
       position: relative;
       background: linear-gradient(180deg, rgba(47, 124, 93, 0.04), transparent 22%), var(--card);
@@ -265,11 +297,11 @@
     .day-image {
       width: 100%;
       max-width: 100%;
-      border-radius: 12px;
+      border-radius: 14px;
       display: block;
       margin-bottom: 4px;
       border: 1px solid rgba(47, 124, 93, 0.12);
-      box-shadow: 0 8px 18px rgba(20, 49, 38, 0.06);
+      box-shadow: 0 10px 24px rgba(20, 49, 38, 0.12);
     }
 
     .day-pill {
@@ -277,24 +309,24 @@
       align-items: center;
       gap: 6px;
       padding: 6px 12px;
-      background: var(--pill);
-      color: var(--deep);
+      background-color: rgba(255, 255, 255, 0.85);
+      color: var(--accent-green);
       border-radius: 999px;
       font-weight: 700;
       font-size: 0.92rem;
       border: 1px solid rgba(47, 124, 93, 0.18);
       margin-bottom: 10px;
-      box-shadow: 0 6px 16px rgba(20, 49, 38, 0.06);
+      box-shadow: 0 8px 18px rgba(20, 49, 38, 0.08);
     }
 
     .time-list {
       list-style: none;
       padding-left: 0;
-      margin: 0;
+      margin: 2px 0 0;
       color: var(--text);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .time-list li {
@@ -331,12 +363,12 @@
 
     .wish-lists {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .wish-block {
-      padding: 14px 16px 6px;
+      padding: 14px 16px 10px;
       border: 1px solid rgba(47, 124, 93, 0.12);
       border-radius: 12px;
       background: linear-gradient(135deg, rgba(47, 124, 93, 0.04), rgba(107, 180, 141, 0.08));
@@ -358,7 +390,6 @@
       align-items: center;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(47, 124, 93, 0.15);
       color: var(--deep);
       border: 1px solid rgba(47, 124, 93, 0.2);
       font-size: 0.9rem;
@@ -370,7 +401,7 @@
     }
 
     .wish-link {
-      color: var(--deep);
+      color: var(--accent-green);
       text-decoration: none;
       border-bottom: 1px solid rgba(47, 124, 93, 0.25);
       padding-bottom: 2px;
@@ -408,14 +439,34 @@
       color: var(--accent);
     }
 
+    .badge-must {
+      background: var(--accent-green);
+      color: #ffffff;
+    }
+
+    .badge-better {
+      background: var(--accent-green-soft);
+      color: var(--deep);
+    }
+
+    .badge-want {
+      background: var(--accent-yellow);
+      color: var(--deep);
+    }
+
     @media (max-width: 600px) {
       header {
         padding: 64px 16px 52px;
         min-height: 62vh;
       }
 
-      section {
-        padding: 22px 18px;
+      .page-wrapper {
+        padding: 18px 16px 0;
+        gap: 20px;
+      }
+
+      .card {
+        padding: 18px 18px 22px;
       }
 
       .schedule-grid {
@@ -439,103 +490,104 @@
   </header>
 
   <main>
-    <!-- カウントダウンセクション：出発までの日数表示 -->
-    <section class="countdown-card">
-      <p class="countdown-label">家族旅行が待ちきれないね</p>
-      <h2>出発まであと</h2>
-      <div class="countdown-number">
-        <span id="countdown-days">--</span>
-        <span class="days-label">日</span>
-      </div>
-      <p class="countdown-note" id="countdown-note">出発日に向けてわくわく準備中。</p>
-    </section>
+    <div class="page-wrapper">
+      <!-- カウントダウンセクション：出発までの日数表示 -->
+      <section class="card countdown-card">
+        <p class="countdown-label">家族旅行が待ちきれないね</p>
+        <h2 class="card-title">出発まであと</h2>
+        <div class="countdown-number">
+          <span id="countdown-days">--</span>
+          <span class="days-label">日</span>
+        </div>
+        <p class="countdown-note" id="countdown-note">出発日に向けてわくわく準備中。</p>
+      </section>
 
-    <!-- 日程セクション：旅行期間の概要 -->
-    <section>
-      <h2>日程</h2>
-      <p>2026年1月9日（金）〜1月13日（火）の5日間。寒い関西を離れ、穏やかな冬の沖縄でのんびり過ごします。</p>
-      <span class="note">家族4人 / レンタカー利用</span>
-    </section>
+      <!-- 日程セクション：旅行期間の概要 -->
+      <section class="card">
+        <h2 class="card-title">日程</h2>
+        <p class="section-lead">2026年1月9日（金）〜1月13日（火）の5日間。寒い関西を離れ、穏やかな冬の沖縄でのんびり過ごします。</p>
+        <span class="note">家族4人 / レンタカー利用</span>
+      </section>
 
-    <!-- 参加者セクション：家族の紹介 -->
-    <section>
-      <h2>参加者</h2>
-      <img src="images/IMG_0585.JPG" alt="家族写真" class="participants-photo">
-      <div class="participants-names">
-        <span class="participant-pill">洋喜</span>
-        <span class="participant-pill">彩圭</span>
-        <span class="participant-pill">想生</span>
-      </div>
-    </section>
+      <!-- 参加者セクション：家族の紹介 -->
+      <section class="card">
+        <h2 class="card-title">参加者</h2>
+        <img src="images/IMG_0585.JPG" alt="家族写真" class="participants-photo">
+        <div class="participants-names">
+          <span class="participant-pill">洋喜</span>
+          <span class="participant-pill">彩圭</span>
+          <span class="participant-pill">想生</span>
+        </div>
+      </section>
 
-    <!-- 日ごとのスケジュール：各日の予定概要 -->
-    <section>
-      <h2>日ごとのスケジュール</h2>
-      <div class="schedule-grid">
-        <div class="card day-card">
-          <img src="images/day1.png" alt="DAY1 本部町へ向かうドライブとチェックインのイメージ" class="day-image">
-          <span class="day-pill">🌅 DAY1（1月9日）</span>
-          <ul class="time-list">
-            <li>6:30：関西国際空港着</li>
-            <li>8:00：関空発（離陸）</li>
-            <li>10:30：那覇空港到着（着陸）</li>
-            <li>11:00：レンタカーを受け取り出発！本部町へ</li>
-            <li><a class="schedule-link" href="https://www.airbnb.jp/trips/shared/f19c489d-7ab9-4cb1-a5d9-540aba5a10ea?confCode=HMN5W4N9RQ&principal_token=302ac218-16f3-4601-9e9e-dd6efac66b9f&s=67&unique_share_id=ce47f4b3-93d3-4529-b6de-a71aa1e95376" target="_blank" rel="noopener noreferrer">15:30：本部町の宿にチェックイン（Airbnb）</a></li>
-            <li>16:00〜：買い物、周辺散策</li>
-            <li>18:00〜：風呂、夕食</li>
-          </ul>
+      <!-- 日ごとのスケジュール：各日の予定概要 -->
+      <section class="card">
+        <h2 class="card-title">日ごとのスケジュール</h2>
+        <div class="schedule-grid">
+          <div class="card day-card">
+            <img src="images/day1.jpg" alt="DAY1 本部町へ向かうドライブとチェックインのイメージ" class="day-image">
+            <span class="day-pill">🌅 DAY1（1月9日）</span>
+            <ul class="time-list">
+              <li>6:30：関西国際空港着</li>
+              <li>8:00：関空発（離陸）</li>
+              <li>10:30：那覇空港到着（着陸）</li>
+              <li>11:00：レンタカーを受け取り出発！本部町へ</li>
+              <li><a class="schedule-link" href="https://www.airbnb.jp/trips/shared/f19c489d-7ab9-4cb1-a5d9-540aba5a10ea?confCode=HMN5W4N9RQ&principal_token=302ac218-16f3-4601-9e9e-dd6efac66b9f&s=67&unique_share_id=ce47f4b3-93d3-4529-b6de-a71aa1e95376" target="_blank" rel="noopener noreferrer">15:30：本部町の宿にチェックイン（Airbnb）</a></li>
+              <li>16:00〜：買い物、周辺散策</li>
+              <li>18:00〜：風呂、夕食</li>
+            </ul>
+          </div>
+          <div class="card day-card">
+            <img src="images/day2.jpg" alt="DAY2 美ら海水族館のイメージ" class="day-image">
+            <span class="day-pill">🐬 DAY2（1月10日）</span>
+            <ul class="time-list">
+              <li>10:00〜13:00：美ら海水族館</li>
+              <li>その後は近隣をゆっくり散策</li>
+              <li>18:00〜：風呂、夕食</li>
+            </ul>
+          </div>
+          <div class="card day-card">
+            <img src="images/day3.jpg" alt="DAY3 名護パイナップルパークと北部ドライブのイメージ" class="day-image">
+            <span class="day-pill">🍍 DAY3（1月11日）</span>
+            <ul class="time-list">
+              <li>10:00〜12:00：名護パイナップルパーク</li>
+              <li>12:00〜：沖縄北部ドライブ・観光</li>
+              <li>17:00〜：BBQ、風呂</li>
+            </ul>
+          </div>
+          <div class="card day-card">
+            <img src="images/day4.jpg" alt="DAY4 那覇・国際通り散策のイメージ" class="day-image">
+            <span class="day-pill">🛍 DAY4（1月12日）</span>
+            <ul class="time-list">
+              <li>9:00：本部町の宿をチェックアウト、出発</li>
+              <li>那覇までドライブ</li>
+              <li>13:30：レンタカー返却（那覇空港）</li>
+              <li><a class="schedule-link" href="https://coldioresort.com/facilities/condominium-lsinn-naha-higawa/" target="_blank" rel="noopener noreferrer">15:00：那覇の宿にチェックイン</a></li>
+              <li>15:30〜：国際通り散策 &amp; ショッピング</li>
+              <li>18:30〜：風呂、夕食</li>
+            </ul>
+          </div>
+          <div class="card day-card">
+            <img src="images/day5.jpg" alt="DAY5 帰りのフライトのイメージ" class="day-image">
+            <span class="day-pill">✈ DAY5（1月13日）</span>
+            <ul class="time-list">
+              <li>9:10：那覇の宿をチェックアウト</li>
+              <li>10:15：那覇空港着</li>
+              <li>12:10：那覇空港発（離陸）</li>
+              <li>14:05：関空着（着陸）</li>
+            </ul>
+          </div>
         </div>
-        <div class="card day-card">
-          <img src="images/day2.png" alt="DAY2 美ら海水族館のイメージ" class="day-image">
-          <span class="day-pill">🐬 DAY2（1月10日）</span>
-          <ul class="time-list">
-            <li>10:00〜13:00：美ら海水族館</li>
-            <li>その後は近隣をゆっくり散策</li>
-            <li>18:00〜：風呂、夕食</li>
-          </ul>
-        </div>
-        <div class="card day-card">
-          <img src="images/day3.png" alt="DAY3 名護パイナップルパークと北部ドライブのイメージ" class="day-image">
-          <span class="day-pill">🍍 DAY3（1月11日）</span>
-          <ul class="time-list">
-            <li>10:00〜12:00：名護パイナップルパーク</li>
-            <li>12:00〜：沖縄北部ドライブ・観光</li>
-            <li>17:00〜：BBQ、風呂</li>
-          </ul>
-        </div>
-        <div class="card day-card">
-          <img src="images/day4.png" alt="DAY4 那覇・国際通り散策のイメージ" class="day-image">
-          <span class="day-pill">🛍 DAY4（1月12日）</span>
-          <ul class="time-list">
-            <li>9:00：本部町の宿をチェックアウト、出発</li>
-            <li>那覇までドライブ</li>
-            <li>13:30：レンタカー返却（那覇空港）</li>
-            <li><a class="schedule-link" href="https://coldioresort.com/facilities/condominium-lsinn-naha-higawa/" target="_blank" rel="noopener noreferrer">15:00：那覇の宿にチェックイン</a></li>
-            <li>15:30〜：国際通り散策 & ショッピング</li>
-            <li>18:30〜：風呂、夕食</li>
-          </ul>
-        </div>
-        <div class="card day-card">
-          <img src="images/day5.png" alt="DAY5 帰りのフライトのイメージ" class="day-image">
-          <span class="day-pill">✈ DAY5（1月13日）</span>
-          <ul class="time-list">
-            <li>9:10：那覇の宿をチェックアウト</li>
-            <li>10:15：那覇空港着</li>
-            <li>12:10：那覇空港発（離陸）</li>
-            <li>14:05：関空着（着陸）</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <!-- 行きたい場所リスト：訪問予定スポット -->
-    <section>
-      <h2>行きたいところ・やりたいことリスト</h2>
+    <section class="card">
+      <h2 class="card-title">行きたいところ・やりたいことリスト</h2>
       <div class="divider"></div>
       <div class="wish-lists">
         <div class="wish-block">
           <div class="subheading">
-            <span class="badge">Must</span>
+            <span class="badge badge-must">⭐ Must</span>
             <span>行きたいところ・やりたいことリスト_Must（絶対）</span>
           </div>
           <ul class="list-accent">
@@ -546,7 +598,7 @@
         </div>
         <div class="wish-block">
           <div class="subheading">
-            <span class="badge">Better</span>
+            <span class="badge badge-better">◯ Better</span>
             <span>行きたいところ・やりたいことリスト_Better（できれば）</span>
           </div>
           <ul class="list-accent">
@@ -560,7 +612,7 @@
         </div>
         <div class="wish-block">
           <div class="subheading">
-            <span class="badge">Want</span>
+            <span class="badge badge-want">✨ Want</span>
             <span>行きたいところ・やりたいことリスト_Want（あったら嬉しい）</span>
           </div>
           <ul class="list-accent">
@@ -570,6 +622,8 @@
         </div>
       </div>
     </section>
+    </div>
+
   </main>
   <script>
     // Countdown to the departure date (local time)
