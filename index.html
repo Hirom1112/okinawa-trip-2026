@@ -229,9 +229,10 @@
 
     .card {
       padding: 18px;
-      background: linear-gradient(135deg, rgba(47, 124, 93, 0.06), rgba(107, 180, 141, 0.12));
+      background: var(--card);
       border-radius: 14px;
-      border: 1px solid rgba(47, 124, 93, 0.14);
+      border: 1px solid rgba(47, 124, 93, 0.16);
+      box-shadow: 0 12px 26px rgba(20, 49, 38, 0.08);
       position: relative;
       overflow: hidden;
     }
@@ -241,7 +242,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 50%);
     }
 
     .card strong {
@@ -250,6 +251,25 @@
       margin-bottom: 6px;
       font-weight: 800;
       font-size: 1.05rem;
+    }
+
+    .day-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 4px solid var(--accent);
+      position: relative;
+      background: linear-gradient(180deg, rgba(47, 124, 93, 0.04), transparent 22%), var(--card);
+    }
+
+    .day-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 4px;
+      border: 1px solid rgba(47, 124, 93, 0.12);
+      box-shadow: 0 8px 18px rgba(20, 49, 38, 0.06);
     }
 
     .day-pill {
@@ -265,6 +285,42 @@
       border: 1px solid rgba(47, 124, 93, 0.18);
       margin-bottom: 10px;
       box-shadow: 0 6px 16px rgba(20, 49, 38, 0.06);
+    }
+
+    .time-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .time-list li {
+      position: relative;
+      padding-left: 14px;
+      line-height: 1.6;
+    }
+
+    .time-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .schedule-link {
+      color: var(--deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(47, 124, 93, 0.22);
+      padding-bottom: 2px;
+    }
+
+    .schedule-link:hover,
+    .schedule-link:focus {
+      color: #0f2f24;
+      border-bottom-color: rgba(47, 124, 93, 0.5);
     }
 
     .divider {
@@ -416,30 +472,58 @@
     <section>
       <h2>日ごとのスケジュール</h2>
       <div class="schedule-grid">
-        <div class="card">
-          <span class="day-pill">1日目</span>
-          <strong>1/9（金）</strong>
-          <p>関空から那覇へ移動し、本部町の宿にチェックイン。</p>
+        <div class="card day-card">
+          <img src="images/day1.jpg" alt="DAY1 本部町へ向かうドライブとチェックインのイメージ" class="day-image">
+          <span class="day-pill">🌅 DAY1（1月9日）</span>
+          <ul class="time-list">
+            <li>6:30：関西国際空港着</li>
+            <li>8:00：関空発（離陸）</li>
+            <li>10:30：那覇空港到着（着陸）</li>
+            <li>11:00：レンタカーを受け取り出発！本部町へ</li>
+            <li><a class="schedule-link" href="https://www.airbnb.jp/trips/shared/f19c489d-7ab9-4cb1-a5d9-540aba5a10ea?confCode=HMN5W4N9RQ&principal_token=302ac218-16f3-4601-9e9e-dd6efac66b9f&s=67&unique_share_id=ce47f4b3-93d3-4529-b6de-a71aa1e95376" target="_blank" rel="noopener noreferrer">15:30：本部町の宿にチェックイン（Airbnb）</a></li>
+            <li>16:00〜：買い物、周辺散策</li>
+            <li>18:00〜：風呂、夕食</li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="day-pill">2日目</span>
-          <strong>1/10（土）</strong>
-          <p>美ら海水族館でじっくり海の世界を楽しむ日。</p>
+        <div class="card day-card">
+          <img src="images/day2.jpg" alt="DAY2 美ら海水族館のイメージ" class="day-image">
+          <span class="day-pill">🐬 DAY2（1月10日）</span>
+          <ul class="time-list">
+            <li>10:00〜13:00：美ら海水族館</li>
+            <li>その後は近隣をゆっくり散策</li>
+            <li>18:00〜：風呂、夕食</li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="day-pill">3日目</span>
-          <strong>1/11（日）</strong>
-          <p>沖縄北部をドライブ観光。夜は宿でバーベキューを予定。</p>
+        <div class="card day-card">
+          <img src="images/day3.jpg" alt="DAY3 名護パイナップルパークと北部ドライブのイメージ" class="day-image">
+          <span class="day-pill">🍍 DAY3（1月11日）</span>
+          <ul class="time-list">
+            <li>10:00〜12:00：名護パイナップルパーク</li>
+            <li>12:00〜：沖縄北部ドライブ・観光</li>
+            <li>17:00〜：BBQ、風呂</li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="day-pill">4日目</span>
-          <strong>1/12（月）</strong>
-          <p>那覇の宿に移動し、国際通りなどでショッピング。</p>
+        <div class="card day-card">
+          <img src="images/day4.jpg" alt="DAY4 那覇・国際通り散策のイメージ" class="day-image">
+          <span class="day-pill">🛍 DAY4（1月12日）</span>
+          <ul class="time-list">
+            <li>9:00：本部町の宿をチェックアウト、出発</li>
+            <li>那覇までドライブ</li>
+            <li>13:30：レンタカー返却（那覇空港）</li>
+            <li><a class="schedule-link" href="https://coldioresort.com/facilities/condominium-lsinn-naha-higawa/" target="_blank" rel="noopener noreferrer">15:00：那覇の宿にチェックイン</a></li>
+            <li>15:30〜：国際通り散策 & ショッピング</li>
+            <li>18:30〜：風呂、夕食</li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="day-pill">5日目</span>
-          <strong>1/13（火）</strong>
-          <p>那覇から関空へ移動して帰宅。</p>
+        <div class="card day-card">
+          <img src="images/day5.jpg" alt="DAY5 帰りのフライトのイメージ" class="day-image">
+          <span class="day-pill">✈ DAY5（1月13日）</span>
+          <ul class="time-list">
+            <li>9:10：那覇の宿をチェックアウト</li>
+            <li>10:15：那覇空港着</li>
+            <li>12:10：那覇空港発（離陸）</li>
+            <li>14:05：関空着（着陸）</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -466,7 +550,7 @@
             <span>行きたいところ・やりたいことリスト_Better（できれば）</span>
           </div>
           <ul class="list-accent">
-            <li><a class="wish-link" href="https://www.shikuwasa-park.com/" target="_blank" rel="noopener noreferrer">シークワーサーパーク</a></li>
+            <li><a class="wish-link" href="https://www.shikuwasa-park.com/" target="_blank" rel="noopener noreferrer">シークヮーサーパーク</a></li>
             <li><a class="wish-link" href="https://www.orionbeer.co.jp/happypark/" target="_blank" rel="noopener noreferrer">オリオンハッピーパーク（事前予約必要）</a></li>
             <li><a class="wish-link" href="https://hedomisaki-okinawa.com/" target="_blank" rel="noopener noreferrer">辺戸岬</a></li>
             <li><a class="wish-link" href="https://www.okinawastory.jp/spot/1271" target="_blank" rel="noopener noreferrer">慶佐次湾のヒルギ林</a></li>
